@@ -108,6 +108,10 @@ The benchmark is released for competition, research, education, reproducibility,
 
 No blanket data license (for example, CC BY 4.0) is asserted over the datasets in this repository. Project-authored code (validators, schemas, helper scripts) is separately licensed under the MIT License in [`LICENSE-CODE`](LICENSE-CODE); that code license does not extend to the datasets or to third-party-derived data.
 
+## Illustrative Header Image
+
+The map shown at the top of the README and landing page (`docs/header.png`) is "US railway map" by Wikideas1, from Wikimedia Commons (https://commons.wikimedia.org/wiki/File:US_railway_map.webp), dedicated to the public domain under CC0 1.0 Universal; it was created with QGIS using U.S. Bureau of Transportation Statistics data. It is an illustrative overview of the Class I railroad network, intermodal terminals, and RoRo ports. It is **not** the benchmark network and was not used to construct the released data.
+
 ## Institutional Roles
 
 Institutional affiliations listed in this repository identify the competition leadership and problem-development roles. Their listing should not be interpreted as a separate institutional license, sponsorship statement, operational endorsement, or transfer of ownership of the released benchmark.

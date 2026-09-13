@@ -2,7 +2,8 @@
 
 **Railroad Blocking Problem for North American Class I Railroads**
 
-<p align="center"><img src="docs/header.png" alt="Overview map of the North American Class I railroad network used in the benchmark (illustrative)" width="560"></p>
+<p align="center"><img src="docs/header.png" alt="Map of major U.S. Class I railroads, intermodal terminals, and RoRo ports (illustrative)" width="560"></p>
+<p align="center"><sub>Header image: "US railway map" by [Wikideas1](https://commons.wikimedia.org/wiki/User:Wikideas1), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:US_railway_map.webp), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain); own work created with QGIS using U.S. Bureau of Transportation Statistics data. Shown here as an illustrative overview of the Class I railroad network, intermodal terminals, and RoRo ports; it is not the benchmark network.</sub></p>
 
 This repository is the **ASU Trans+AI Lab research mirror and archival benchmark package** for the INFORMS Railway Applications Section (RAS) 2026 Problem Solving Competition: the railroad blocking benchmark instances, schemas, validators, scoring tools, documentation, and reproducibility resources (release v2.1). It does not replace the official competition pages linked below.
 
@@ -161,7 +162,7 @@ See [`scoring/SCORE_README.md`](scoring/SCORE_README.md) for the validator check
 | `datasets/l1/`, `l2/`, `l3/` | Input data per layer with a layer README |
 | `datasets/yard_to_yard_min_distance.csv.zip` | Yard-to-yard shortest-path distances on the released network |
 | `scoring/` | `fast_validator_v2_0.py`, `metric_fast_v2_0.ipynb`, `json2csv.py`, `submission_check.py`, `solution.csv`, `sample_solutions.zip`, `SCORE_README.md` |
-| `docs/` | GitHub Pages landing page, `problem_statement.pdf`, and `header.png` |
+| `docs/` | GitHub Pages landing page, `problem_statement.pdf`, and `header.png` (Wikimedia Commons, CC0) |
 | `unpack.py` | Extracts the compressed inputs in place |
 | `DATA_PROVENANCE_AND_USE.md`, `NOTICE.md`, `LICENSE-CODE`, `CITATION.cff`, `SHA256SUMS.txt` | Provenance, notices, code license, citation metadata, checksums |
 

@@ -18,6 +18,8 @@ The materials are provided for competition, research, education, reproducibility
 
 Institutional affiliations identify competition leadership and problem-development roles and do not by themselves constitute institutional endorsement, sponsorship, licensing, or ownership statements.
 
+The header image `docs/header.png` is "US railway map" by Wikideas1, Wikimedia Commons (https://commons.wikimedia.org/wiki/File:US_railway_map.webp), released under CC0 1.0 Universal (public domain); own work created with QGIS using U.S. Bureau of Transportation Statistics data. It is illustrative only and is not the benchmark network.
+
 Official competition announcements:
 
 - Kaggle: https://www.kaggle.com/competitions/informs-ras-2026-problem-solving-competition
