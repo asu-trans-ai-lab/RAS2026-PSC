@@ -184,7 +184,23 @@ Read [`DATA_PROVENANCE_AND_USE.md`](DATA_PROVENANCE_AND_USE.md) before using the
 
 > Institutional affiliations are provided to identify the competition leadership and problem-development roles. Their listing should not be interpreted as a separate institutional license, sponsorship statement, operational endorsement, or transfer of ownership of the released benchmark.
 
-**Judging committee** (as listed on the Kaggle page): David Hunt (2025 INFORMS President and 2026 Immediate Past-President); Ravindra K. Ahuja; Michael Hewitt (Editor-in-Chief, *Transportation Science*).
+**Judging committee**
+
+| Name | Organization |
+|---|---|
+| Cynthia Barnhart | MIT |
+| Ravi Ahuja | Optym |
+| David Hunt | Oliver Wyman |
+| Michael Hewitt | Loyola University Chicago |
+| Gunnar Feldmann | Norfolk Southern |
+| Edward Lin | Independent / retired Norfolk Southern |
+| Clark Cheng | RailTek |
+| Marc Meketon | Independent |
+| John Fuller | Union Pacific |
+| Carl Van Dyke | CVD Zone |
+| Baoyu Zhou | Arizona State University |
+
+Affiliations are listed for identification only (see the note above).
 
 Registration and questions during the competition: rasproblemsolving2026@gmail.com (subject line `RASPSC2026`).
 

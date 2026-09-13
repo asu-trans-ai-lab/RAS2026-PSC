@@ -126,7 +126,23 @@ Prizes: 1st $2,000 · 2nd $1,000 · 3rd $750.
 
 Institutional affiliations are provided to identify the competition leadership and problem-development roles. Their listing should not be interpreted as a separate institutional license, sponsorship statement, operational endorsement, or transfer of ownership of the released benchmark.
 
-Judging committee (per the Kaggle page): David Hunt, Ravindra K. Ahuja, Michael Hewitt.
+**Judging committee**
+
+| Name | Organization |
+|---|---|
+| Cynthia Barnhart | MIT |
+| Ravi Ahuja | Optym |
+| David Hunt | Oliver Wyman |
+| Michael Hewitt | Loyola University Chicago |
+| Gunnar Feldmann | Norfolk Southern |
+| Edward Lin | Independent / retired Norfolk Southern |
+| Clark Cheng | RailTek |
+| Marc Meketon | Independent |
+| John Fuller | Union Pacific |
+| Carl Van Dyke | CVD Zone |
+| Baoyu Zhou | Arizona State University |
+
+Affiliations are listed for identification only.
 
 ---
 
