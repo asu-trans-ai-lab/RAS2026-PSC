@@ -110,7 +110,7 @@ No blanket data license (for example, CC BY 4.0) is asserted over the datasets i
 
 ## Illustrative Header Image
 
-The map shown at the top of the README and landing page (`docs/header.png`) is "US railway map" by Wikideas1, from Wikimedia Commons (https://commons.wikimedia.org/wiki/File:US_railway_map.webp), dedicated to the public domain under CC0 1.0 Universal; it was created with QGIS using U.S. Bureau of Transportation Statistics data. It is an illustrative overview of the Class I railroad network, intermodal terminals, and RoRo ports. It is **not** the benchmark network and was not used to construct the released data.
+The map shown at the top of the README and landing page (`docs/header.png`) is "US railway map" by Wikideas1, from Wikimedia Commons (https://commons.wikimedia.org/wiki/File:US_railway_map.webp), dedicated to the public domain under CC0 1.0 Universal; it was created with QGIS using U.S. Bureau of Transportation Statistics data. It is an illustrative overview of the Class I railroad network, intermodal terminals, and RoRo ports. It is **not** the benchmark network.
 
 ## Institutional Roles
 
