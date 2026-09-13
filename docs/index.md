@@ -100,24 +100,6 @@ python fast_validator_v2_0.py solution_result_l1_10.json --od-matrix od_distance
 
 ---
 
-## Competition timeline (2026)
-
-| Date | Milestone |
-|---|---|
-| April 23 | Problem statement and demo data released |
-| May 19 | Official release of full problem statement, dataset, and evaluation files |
-| July 1 | Registration deadline |
-| August 21 | Kaggle submission deadline |
-| August 24 | Solution paper deadline |
-| September 7 | Finalists announced |
-| September 30 | Finalist presentation videos due |
-| October 12–16 | Finalist video conference with the judges |
-| November 1–4 | Finalist presentations and winner announcement, INFORMS Annual Meeting (RAS cluster) |
-
-Prizes: 1st $2,000 · 2nd $1,000 · 3rd $750.
-
----
-
 ## Competition leadership
 
 - **Competition Chair** — Xuesong Zhou, Professor of Transportation Systems, Arizona State University (xzhou74@asu.edu)

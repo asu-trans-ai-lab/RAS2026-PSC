@@ -206,25 +206,6 @@ Registration and questions during the competition: rasproblemsolving2026@gmail.c
 
 ---
 
-## Competition timeline (2026)
-
-| Date | Milestone |
-|---|---|
-| April 23 | Initial release of the problem statement and demo data for pipeline testing |
-| May 19 | Official release of the full problem statement, dataset, and evaluation files |
-| July 1 | Registration deadline |
-| May 11 – August 21 | Q&A period |
-| August 21 | Kaggle submission deadline |
-| August 24 | Solution paper submission deadline |
-| September 7 | Announcement of finalists |
-| September 30 | Finalists submit presentation videos |
-| October 12–16 | Finalist video conference with the judges |
-| November 1–4 | Finalist presentations and winner announcement at the INFORMS Annual Meeting (RAS cluster) |
-
-Prizes: 1st $2,000, 2nd $1,000, 3rd $750 (total $3,750).
-
----
-
 ## Upstream source links
 
 ### Freight Analysis Framework (FAF) — demand-side provenance
