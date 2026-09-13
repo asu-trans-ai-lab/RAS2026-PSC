@@ -1,11 +1,11 @@
-# INFORMS RAS 2026 Problem Solving Competition — Public Benchmark Archive
+# INFORMS RAS 2026 Problem Solving Competition — Data Mirror Site
 
 **Railroad Blocking Problem for North American Class I Railroads**
 
 <p align="center"><img src="docs/header.png" alt="Map of major U.S. Class I railroads, intermodal terminals, and RoRo ports (illustrative)" width="560"></p>
 <p align="center"><sub>Header image: "US railway map" by [Wikideas1](https://commons.wikimedia.org/wiki/User:Wikideas1), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:US_railway_map.webp), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain); own work created with QGIS using U.S. Bureau of Transportation Statistics data. Shown here as an illustrative overview of the Class I railroad network, intermodal terminals, and RoRo ports; it is not the benchmark network.</sub></p>
 
-This repository is the **ASU Trans+AI Lab research mirror and archival benchmark package** for the INFORMS Railway Applications Section (RAS) 2026 Problem Solving Competition: the railroad blocking benchmark instances, schemas, validators, scoring tools, documentation, and reproducibility resources (release v2.1). It does not replace the official competition pages linked below.
+**This repository is the data mirror site** maintained by the ASU Trans+AI Lab for the INFORMS Railway Applications Section (RAS) 2026 Problem Solving Competition. It mirrors the railroad blocking benchmark instances, schemas, validators, scoring tools, documentation, and reproducibility resources (release v2.1) so the dataset stays citable and reproducible. It is **not** the official competition site: the Kaggle and INFORMS RAS pages linked below are the authoritative sources for the competition itself.
 
 [![Kaggle](https://img.shields.io/badge/Kaggle-competition%20page-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/competitions/informs-ras-2026-problem-solving-competition)
 [![INFORMS RAS](https://img.shields.io/badge/INFORMS%20RAS-2026%20PSC-1F4E79)](https://connect.informs.org/railway-applications/new-item3/problem-solving-competition682)

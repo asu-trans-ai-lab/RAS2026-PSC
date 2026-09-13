@@ -5,13 +5,13 @@ title: RAS 2026 Problem Solving Competition
 
 # INFORMS RAS 2026 Problem Solving Competition
 
-## Railroad Blocking Problem for North American Class I Railroads — Public Benchmark Archive
+## Railroad Blocking Problem for North American Class I Railroads — Data Mirror Site
 
 ![Map of major U.S. Class I railroads, intermodal terminals, and RoRo ports (illustrative)](header.png)
 
 <sub>Header image: "US railway map" by [Wikideas1](https://commons.wikimedia.org/wiki/User:Wikideas1), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:US_railway_map.webp), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain); own work created with QGIS using U.S. Bureau of Transportation Statistics data. Shown here as an illustrative overview of the Class I railroad network, intermodal terminals, and RoRo ports; it is not the benchmark network.</sub>
 
-This site is the **ASU Trans+AI Lab research mirror and archival benchmark package** for the INFORMS Railway Applications Section (RAS) 2026 Problem Solving Competition. It hosts the benchmark instances, schemas, validators, scoring tools, and documentation for reproducible railroad-blocking algorithm development. It does not replace the official competition pages.
+**This is the data mirror site** maintained by the ASU Trans+AI Lab for the INFORMS Railway Applications Section (RAS) 2026 Problem Solving Competition. It mirrors the benchmark instances, schemas, validators, scoring tools, and documentation so the dataset stays citable and reproducible. It is **not** the official competition site: the Kaggle and INFORMS RAS pages linked below are the authoritative sources for the competition itself.
 
 <p>
 <a class="btn" href="https://www.kaggle.com/competitions/informs-ras-2026-problem-solving-competition">Kaggle competition page</a>
