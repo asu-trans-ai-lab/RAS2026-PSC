@@ -100,7 +100,7 @@ python fast_validator_v2_0.py solution_result_l1_10.json --od-matrix od_distance
 
 ---
 
-## Competition leadership
+## Organization team
 
 - **Competition Chair** — Xuesong Zhou, Professor of Transportation Systems, Arizona State University (xzhou74@asu.edu)
 - **Co-Chair** — Natalia Zuniga Garcia, Computational Transportation Engineer, Argonne National Laboratory (nzuniga@anl.gov)

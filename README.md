@@ -174,7 +174,7 @@ Read [`DATA_PROVENANCE_AND_USE.md`](DATA_PROVENANCE_AND_USE.md) before using the
 
 ---
 
-## Competition leadership
+## Organization team
 
 **Competition Chair** — **Xuesong Zhou**, Professor of Transportation Systems, Arizona State University. Email: xzhou74@asu.edu
 
