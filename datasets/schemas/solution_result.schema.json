@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://informs.org/ras2026/solution_result.schema.json",
+  "title": "RAS 2026 solution_result.json",
+  "description": "Output JSON schema for a competition submission. Top-level structure has two sections: 'inputs' (a copy of the input data the solution was built against) and 'outputs' (the three blocking decisions). See spec v1.5 §4.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["inputs", "outputs"],
+  "properties": {
+    "inputs": {
+      "type": "object",
+      "description": "Copy of the input data (settings, nodes, links, demands) for reproducibility and validation.",
+      "required": ["settings", "nodes", "links", "demands"],
+      "properties": {
+        "settings": {
+          "type": "object",
+          "description": "Global parameters from setting.csv. See spec §3.4.",
+          "properties": {
+            "min_block_vol_short(<100mi)": {"type": "number", "minimum": 0},
+            "min_block_vol_med(100-500mi)": {"type": "number", "minimum": 0},
+            "min_block_vol_long(>500mi)":   {"type": "number", "minimum": 0},
+            "max_circuitous_ratio":         {"type": "number", "minimum": 1},
+            "operating_cycle":              {"type": "integer", "minimum": 1},
+            "block_fixed_cost":             {"type": "number", "minimum": 0},
+            "transport_cost_coefficient":   {"type": "number", "minimum": 0},
+            "interchange_cost":             {"type": "number", "minimum": 0},
+            "stress_penalty_M":             {"type": "number", "minimum": 0, "description": "v1.5 §6.4 Stress Score penalty coefficient. Default 5; range [5, 10]."}
+          },
+          "additionalProperties": true
+        },
+        "nodes": {
+          "type": "array",
+          "items": {"$ref": "node.schema.json#"}
+        },
+        "links": {
+          "type": "array",
+          "items": {"$ref": "link.schema.json#"}
+        },
+        "demands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["commodity_id", "commodity_type", "origin_yard_id", "dest_yard_id", "volume"],
+            "properties": {
+              "commodity_id":     {"type": "integer", "minimum": 1, "description": "Maps to demand.csv:demand_id."},
+              "commodity_type":   {"type": "string", "enum": ["Merchandise", "Intermodal", "Coal", "Grain", "Automobile"]},
+              "origin_yard_id":   {"type": "integer", "minimum": 1},
+              "dest_yard_id":     {"type": "integer", "minimum": 1},
+              "volume":           {"type": "integer", "minimum": 0, "x-unit": "railcars / 70-day cycle"}
+            }
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "description": "Solution components — the three blocking decisions (spec §4.2-4.4).",
+      "required": ["1 Block Design", "2 Blocking Sequence", "3 Block Route"],
+      "properties": {
+        "1 Block Design": {
+          "type": "array",
+          "description": "List of opened blocks (spec §4.2).",
+          "items": {
+            "type": "object",
+            "required": ["block_id", "from_yard_id", "to_yard_id", "block_volume"],
+            "properties": {
+              "block_id":       {"type": "integer", "minimum": 1, "description": "Unique block identifier."},
+              "from_yard_id":   {"type": "integer", "minimum": 1, "description": "Block origin yard."},
+              "to_yard_id":     {"type": "integer", "minimum": 1, "description": "Block destination yard."},
+              "commodity_type": {"type": "string", "enum": ["Manifest", "Bulk", "Intermodal", "Multilevel"], "description": "Block category. Required by v1.4 schema; v1.5 also accepts 'block_type' as the canonical name."},
+              "block_type":     {"type": "string", "enum": ["Manifest", "Bulk", "Intermodal", "Multilevel"], "description": "v1.5 canonical field name (mirrors commodity_type). Validators read this for the C2 classification-only check."},
+              "block_volume":   {"type": "integer", "minimum": 0, "x-unit": "railcars"}
+            }
+          }
+        },
+        "2 Blocking Sequence": {
+          "type": "array",
+          "description": "Per-commodity routing through the block service network (spec §4.3).",
+          "items": {
+            "type": "object",
+            "required": ["commodity_id", "commodity_type", "origin_yard_id", "dest_yard_id", "volume", "blocking_sequence"],
+            "properties": {
+              "commodity_id":      {"type": "integer", "minimum": 1},
+              "commodity_type":    {"type": "string", "enum": ["Merchandise", "Intermodal", "Coal", "Grain", "Automobile"]},
+              "origin_yard_id":    {"type": "integer", "minimum": 1},
+              "dest_yard_id":      {"type": "integer", "minimum": 1},
+              "volume":            {"type": "integer", "minimum": 0, "x-unit": "railcars"},
+              "blocking_sequence": {
+                "type": "string",
+                "pattern": "^\\d+(\\s*->\\s*\\d+)*$",
+                "description": "Sequence of block_ids separated by ' -> '. Single-block direct routing is just a number, e.g. '6'. Hub-and-spoke is multi-block, e.g. '6 -> 12'. Per v1.5 §1.1, intermodal and automobile commodities must use single-block sequences (no intermediate humping)."
+              }
+            }
+          }
+        },
+        "3 Block Route": {
+          "type": "array",
+          "description": "Physical network path for each opened block (spec §4.4).",
+          "items": {
+            "type": "object",
+            "required": ["block_id", "from_yard_id", "to_yard_id", "physical_path_nodes", "physical_path_links"],
+            "properties": {
+              "block_id":            {"type": "integer", "minimum": 1},
+              "from_yard_id":        {"type": "integer", "minimum": 1},
+              "to_yard_id":          {"type": "integer", "minimum": 1},
+              "physical_path_nodes": {
+                "type": "string",
+                "pattern": "^\\d+(\\s*->\\s*\\d+)*$",
+                "description": "Sequence of node_ids on the physical path, joined by ' -> '."
+              },
+              "physical_path_links": {
+                "type": "string",
+                "pattern": "^(\\d+(\\s*->\\s*\\d+)*)?$",
+                "description": "Sequence of link_ids traversed, joined by ' -> '. May be empty for trivial paths."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

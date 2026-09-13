@@ -1,0 +1,10 @@
+# Normalize project text to LF in the repository
+*           text=auto eol=lf
+# Data files: store byte-exact (no line-ending conversion) so checksums match on every platform
+*.csv       -text
+*.json      -text
+*.ipynb     -text
+# Binary assets
+*.zip       binary
+*.pdf       binary
+*.png       binary

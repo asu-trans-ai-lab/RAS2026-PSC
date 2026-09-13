@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://informs.org/ras2026/datasets/demand.schema.json",
+  "title": "RAS 2026 demand.csv row",
+  "description": "Schema for one row of demand.csv. Demand scaling scenarios are represented by the demand_multiplier row in setting.csv, not by separate scaled_demand files. See spec v1.5 §3.3.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "demand_id",
+    "origin_yard_id",
+    "dest_yard_id",
+    "volume",
+    "block_type"
+  ],
+  "properties": {
+    "demand_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Unique commodity row identifier."
+    },
+    "origin_yard_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Origin yard node_id. Must reference a node.csv row with node_type='yard'."
+    },
+    "dest_yard_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Destination yard node_id. Must reference a node.csv row with node_type='yard'."
+    },
+    "volume": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "railcars / 70-day cycle",
+      "description": "Demand volume in car-equivalent units over the operating cycle. Baseline demand.csv ships integer car counts; apply setting.csv:demand_multiplier for the corresponding scenario as needed. Solvers should treat the value as numeric."
+    },
+    "block_type": {
+      "type": "string",
+      "enum": ["Merchandise", "Intermodal", "Coal", "Grain", "Automobile"],
+      "description": "Commodity-derived block category. Merchandise/Coal/Grain are classification commodities (Manifest/Bulk blocks). Intermodal and Automobile are restricted to direct (single-block) blocking sequences per v1.5 §1.1."
+    }
+  }
+}

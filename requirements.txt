@@ -1,0 +1,6 @@
+duckdb==1.5.2
+jsonschema==4.26.0
+numpy==2.4.6
+orjson==3.11.9
+pandas==3.0.3
+scipy==1.17.1

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://informs.org/ras2026/datasets/yard_car_demand_summary.schema.json",
+  "title": "RAS 2026 yard_car_demand_summary.csv row",
+  "description": "Per-yard demand rollup. Convenience aggregation; not required as solver input. One row per yard.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "yard_id",
+    "yard_name",
+    "yard_level",
+    "yard_type",
+    "handling_capacity",
+    "sent_demand",
+    "received_demand",
+    "usage"
+  ],
+  "properties": {
+    "yard_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Yard node_id. References node.csv:node_id."
+    },
+    "yard_name": {
+      "type": "string",
+      "description": "Display name (mirrors node.csv:name)."
+    },
+    "yard_level": {
+      "type": ["integer", "number"],
+      "enum": [1, 2, 3, 1.0, 2.0, 3.0],
+      "description": "Same as node.csv:yard_level."
+    },
+    "yard_type": {
+      "type": "string",
+      "enum": ["hump", "major_flat", "intermodal", "local", "flat"],
+      "description": "Same as node.csv:yard_type."
+    },
+    "handling_capacity": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "cars / 70-day cycle",
+      "description": "Same as node.csv:handling_capacity."
+    },
+    "sent_demand": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "cars / 70-day cycle",
+      "description": "Total demand originating at this yard across all commodities (numeric; ships as integer in baseline, may be float in scaled summaries)."
+    },
+    "received_demand": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "cars / 70-day cycle",
+      "description": "Total demand terminating at this yard across all commodities (numeric; ships as integer in baseline, may be float in scaled summaries)."
+    },
+    "usage": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Capacity utilization estimate (informational): max(sent_demand, received_demand) / handling_capacity."
+    }
+  }
+}

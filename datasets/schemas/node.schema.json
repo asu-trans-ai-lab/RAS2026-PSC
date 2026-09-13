@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://informs.org/ras2026/datasets/node.schema.json",
+  "title": "RAS 2026 node.csv row",
+  "description": "Schema for one row of node.csv. Each CSV row, parsed with appropriate column types, must validate against this schema. See spec v1.5 §3.1.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "node_id",
+    "node_type",
+    "x_coord",
+    "y_coord"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Unique node identifier (sequential)."
+    },
+    "node_type": {
+      "type": "string",
+      "enum": ["yard", "station", "micro", "gate"],
+      "description": "Node category. Only 'yard' rows participate as commodity endpoints and as classification points."
+    },
+    "x_coord": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "x-unit": "decimal degrees (WGS84)",
+      "description": "Longitude."
+    },
+    "y_coord": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "x-unit": "decimal degrees (WGS84)",
+      "description": "Latitude."
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name (e.g., 'AUBURN', 'MEMPHIS'). Empty for non-yard nodes."
+    },
+    "yard_type": {
+      "type": "string",
+      "enum": ["", "hump", "major_flat", "intermodal", "local", "flat"],
+      "description": "For yards only: 'hump' (Class I bowls), 'major_flat' (regional flat sorting), 'intermodal' (ramp-typed), or 'local' (industry-serving). Blank for non-yard nodes."
+    },
+    "yard_level": {
+      "type": ["integer", "number"],
+      "enum": [0, 1, 2, 3, 1.0, 2.0, 3.0],
+      "description": "Yard-size hierarchy: 1 = Class I super-humps; 2 = major-flat regional; 3 = local. 0 for non-yard nodes."
+    },
+    "railroad_id": {
+      "type": "string",
+      "description": "Owning railroad: UP, BNSF, CSX, NS, CN, CPKC, or a placeholder for shared/non-yard nodes."
+    },
+    "num_tracks": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "classification tracks",
+      "description": "Maximum number of outbound CLASSIFICATION (Manifest/Bulk) blocks the yard can build per operating cycle. Per v1.5 §2.2 C2: not consumed by intermodal/multilevel blocks."
+    },
+    "handling_capacity": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "cars / 70-day cycle",
+      "description": "Maximum cars classified at this yard per operating cycle (C3). Pass-through traffic does not count."
+    },
+    "handling_cost": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "$ / car",
+      "description": "Per-car classification handling cost at this yard."
+    },
+    "is_interchange": {
+      "type": "boolean",
+      "description": "TRUE if the yard is a designated multi-railroad interchange point."
+    },
+    "allowed_commodities": {
+      "type": "string",
+      "description": "Comma-separated list of commodities the yard can classify (advisory). Operative restriction is in spec §1.1 / C2."
+    },
+    "allowed_traversal": {
+      "type": "string",
+      "enum": ["all"],
+      "description": "Always 'all' in v1.5; reserved for future per-mode restrictions."
+    },
+    "datasource": {
+      "type": "string",
+      "description": "Provenance note for this row's parameter values."
+    }
+  }
+}

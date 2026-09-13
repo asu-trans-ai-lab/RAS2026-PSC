@@ -1,0 +1,11 @@
+parameter,value,unit,description
+min_block_vol_short(<100mi),350,railcars,Min volume for blocks under 100 miles (C4)
+min_block_vol_med(100-500mi),700,railcars,Min volume for blocks 100-500 miles (C4)
+min_block_vol_long(>500mi),1050,railcars,Min volume for blocks over 500 miles (C4)
+max_circuitous_ratio,1.3,ratio,Max detour factor vs. shortest path (C6)
+operating_cycle,70,days,Planning horizon
+block_fixed_cost,2500,$/block,Fixed cost per opened block
+transport_cost_coefficient,1,$/car-mile,Per car-mile transportation cost coefficient
+interchange_cost,100,$/car,Per-car cost penalty for railroad interchange traffic
+stress_penalty_M,5,$/car-mile,v1.5 §6.4 Stress Score penalty coefficient (range [5 10])
+demand_multiplier,1,ratio,v1.5 §3.4 demand-volume multiplier; set to 0.5 or 2.0 for the corresponding scenario sub-case

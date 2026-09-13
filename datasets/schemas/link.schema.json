@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://informs.org/ras2026/datasets/link.schema.json",
+  "title": "RAS 2026 link.csv row",
+  "description": "Schema for one row of link.csv. Each CSV row, parsed with appropriate column types, must validate against this schema. See spec v1.5 §3.2.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "link_id",
+    "from_node_id",
+    "to_node_id",
+    "length",
+    "capacity"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Unique link identifier (sequential)."
+    },
+    "from_node_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Origin node. References node.csv:node_id."
+    },
+    "to_node_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Destination node. References node.csv:node_id."
+    },
+    "length": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "miles",
+      "description": "Physical length of the segment. Used in transport-cost calculation and shortest-path distance."
+    },
+    "capacity": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "cars / 70-day cycle",
+      "description": "Link throughput capacity (C5). Mainline links are calibrated at 700,000; connector links at 10,000."
+    },
+    "railroad_id": {
+      "type": ["string", "integer"],
+      "description": "Owning railroad. -1 for shared / connector links."
+    },
+    "free_speed": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "mph",
+      "description": "Reference operating speed. Not used in the v1.5 objective; reserved for future scheduling extensions."
+    },
+    "tracks": {
+      "type": "number",
+      "minimum": 0,
+      "x-unit": "physical tracks",
+      "description": "Number of parallel main tracks on this segment (informational). Capacity already reflects multi-track effects."
+    },
+    "geometry": {
+      "type": "string",
+      "description": "WKT LINESTRING lon/lat polyline geometry for visualization. Optional for solver input."
+    }
+  }
+}

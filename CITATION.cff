@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite the RAS 2026 Problem Solving Competition."
+title: "INFORMS RAS 2026 Problem Solving Competition"
+type: dataset
+version: "2.1"
+date-released: "2026-09-13"
+authors:
+  - family-names: Li
+    given-names: Peiheng
+  - family-names: Zhou
+    given-names: Xuesong (Simon)
+url: "https://www.kaggle.com/competitions/informs-ras-2026-problem-solving-competition"
+repository-code: "https://github.com/asu-trans-ai-lab/RAS2026-PSC"
+
+preferred-citation:
+  type: generic
+  title: "INFORMS RAS 2026 Problem Solving Competition"
+  authors:
+    - family-names: Li
+      given-names: Peiheng
+    - family-names: Zhou
+      given-names: Xuesong (Simon)
+  year: 2026
+  url: "https://www.kaggle.com/competitions/informs-ras-2026-problem-solving-competition"

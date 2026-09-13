@@ -1,0 +1,29 @@
+# Large raw files shipped compressed or via GitHub Release (see README "Downloads")
+datasets/l*/link.csv
+scoring/submission.csv
+scoring/od_distance_matrix.csv
+datasets/yard_to_yard_min_distance.csv
+scoring/yard_to_yard_min_distance.csv
+scoring/sample_solutions/
+scoring/solution_result_*.json
+scoring/*_run.ipynb
+
+# Build / release staging
+_build/
+release_build/
+RAS2026-PSC-v*-full.zip
+notes.md
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*

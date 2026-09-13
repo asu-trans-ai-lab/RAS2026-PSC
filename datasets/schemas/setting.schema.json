@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://informs.org/ras2026/datasets/setting.schema.json",
+  "title": "RAS 2026 setting.csv row",
+  "description": "Schema for one row of setting.csv. Each CSV row is a single key-value pair (parameter, value, unit, description). See spec v1.5 §3.4.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["parameter", "value"],
+  "properties": {
+    "parameter": {
+      "type": "string",
+      "enum": [
+        "min_block_vol_short(<100mi)",
+        "min_block_vol_med(100-500mi)",
+        "min_block_vol_long(>500mi)",
+        "max_circuitous_ratio",
+        "operating_cycle",
+        "block_fixed_cost",
+        "transport_cost_coefficient",
+        "interchange_cost",
+        "stress_penalty_M",
+        "demand_multiplier"
+      ],
+      "description": "Parameter name. The canonical v1.5 parameter set."
+    },
+    "value": {
+      "type": ["number", "string"],
+      "description": "Parameter value (numeric for all v1.5 canonical parameters). Stored as a CSV string and cast at parse time."
+    },
+    "unit": {
+      "type": "string",
+      "description": "Physical unit of the value (informational)."
+    },
+    "description": {
+      "type": "string",
+      "description": "One-line human-readable description (informational)."
+    }
+  }
+}
