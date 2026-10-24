@@ -189,7 +189,6 @@ Read [`DATA_PROVENANCE_AND_USE.md`](DATA_PROVENANCE_AND_USE.md) before using the
 | Name | Organization |
 |---|---|
 | Cynthia Barnhart | MIT |
-| Ravi Ahuja | Optym |
 | David Hunt | Oliver Wyman |
 | Michael Hewitt | Loyola University Chicago |
 | Gunnar Feldmann | Norfolk Southern |
